@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+*,html,body{
+    font-family: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg-morph{
+    background-color: #212529d3 !important;
+    backdrop-filter: blur(4px);
+}
+input::placeholder{
+    font-size: 14px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.desktop{
+    display: block !important;
+}
+.mobile{
+    display: none !important;
+}
+.btn-focus-off{
+    outline: none !important;
+    box-shadow: none !important;
+}
+.mobile {
+    display: none !important;
+    transition: all .3s ease-in-out !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.paddingTop {
+    padding-top: 80px !important;
 }
 
-.App-link {
-  color: #61dafb;
+.desktop {
+    display: block !important;
+    width: 100% !important;
+    transition: all .3s ease-in-out !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bg-portfolio {
+    background-color: #0c1324 !important;
+}
+
+.navbarItem {
+    margin-left: 30px !important;
+    font-size: 14px !important;
+    color: white !important;
+    font-weight: 500 !important;
+    transition: color .2s ease-in-out;
+}
+
+
+.navbarItemFooter {
+    font-size: 14px !important;
+    color: white !important;
+    font-weight: 500 !important;
+    transition: color .2s ease-in-out;
+}
+.btn-portfolio{
+    box-shadow: none !important;
+    border: none !important;
+    background-color: #0c1324  !important;
+    transform: scale(1) !important;
+    transition: transform .3s ease-in-out;
+}
+.btn-portfolio:hover{
+    transform: scale(1.05) !important;
+    transition: transform .3s ease-in-out;
+}
+
+h1{
+    font-size: 3rem !important;
+}
+h2{
+    font-size: 2rem !important;
+}
+h3{
+    font-size: 1.5rem !important;
+}
+
+.sidebar-on {
+    height: 300px;
+    width: 50px;
+    right: 5px;
+    bottom: 7px;
+    transition: right .4s ease-in-out !important;
+}
+
+.sidebar-off {
+    height: 300px;
+    width: 50px;
+    right: -100px;
+    bottom: 7px;
+    transition: right .4s ease-in-out !important;
+}
+
+.MuiAccordion-root,.MuiAccordion-rounded,.Mui-expanded,.Mui-disabled,.MuiAccordion-gutters,.MuiAccordion-region{
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.navbarItemFooter:hover,
+.navbarItemFooter:focus,
+.navbarItemFooter:focus-visible,
+.navbarItemFooter:focus-within {
+    color: #576ee0 !important;
+    transition: color .2s ease-in-out;
+}
+.text-portfolio{
+    color: #576ee0 !important;
+}
+
+.navbarItem:hover,
+.navbarItem:focus,
+.navbarItem:focus-visible,
+.navbarItem:focus-within {
+    color: #576ee0 !important;
+    transition: color .2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .paddingTop {
+        padding-top: 0px !important;
+    }
+    .mobile {
+        display: block !important;
+        transition: all .3s ease-in-out !important;
+    }
+    .desktop {
+        display: none !important;
+        width: 100% !important;
+        transition: all .3s ease-in-out !important;
+    }
+}
+
+@media (max-width: 468px) {
+    .mobile-small{display: none !important;}
 }
