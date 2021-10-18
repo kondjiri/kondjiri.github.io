@@ -2,7 +2,7 @@
 import React, { Component, Fragment } from 'react'
 import Footer from '../../components/footer/footer'
 import Header from '../../components/header/header'
-import {Accordion, AccordionDetails, AccordionSummary, Button, IconButton, LinearProgress,Typography} from "@mui/material"
+import {Accordion, AccordionDetails, AccordionSummary, Avatar, Button, IconButton, LinearProgress,Typography} from "@mui/material"
 import {BoltOutlined, CodeOffOutlined, Download,KeyboardArrowDown, RssFeed, SettingsInputAntenna, Storage} from '@mui/icons-material'
 
 export default class Home extends Component {
@@ -44,7 +44,7 @@ export default class Home extends Component {
                           </div>
                           <div className="row container-fluid">
                               <div className="col-lg-6 col-md-6 col-sm-12 col-12">
-                                  <img src="images/fane.png" className="rounded-pill shadow-sm bg-portfolio" style={{width:"100%",height:"100%"}} alt="" />
+                                  <Avatar src="images/Fane.png" variant="rounded" style={{width:'100%',height:'100%'}} />
                               </div>
                               <div className="col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center align-items-center flex-column">
                                   <p className="">
