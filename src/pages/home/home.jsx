@@ -2,16 +2,26 @@
 import React, { Component, Fragment } from 'react'
 import Footer from '../../components/footer/footer'
 import Header from '../../components/header/header'
-import {Accordion, AccordionDetails, AccordionSummary, Avatar, IconButton, LinearProgress,Typography} from "@mui/material"
-import {BoltOutlined, CodeOffOutlined, Download,FlutterDash,KeyboardArrowDown, RssFeed, SettingsInputAntenna, Storage} from '@mui/icons-material'
+import {Accordion,Button, AccordionDetails, AccordionSummary, Avatar, IconButton, LinearProgress,Typography} from "@mui/material"
+import {BoltOutlined, CastForEducation, CodeOffOutlined, Download,FlutterDash,KeyboardArrowDown, RssFeed, SettingsInputAntenna, Storage, Work, WorkOutline} from '@mui/icons-material'
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 
 export default class Home extends Component {
   state={
-    expanded:''
+    expanded:'',
+    experience:true
   }
   handleChange=(message)=>{
     this.setState({expanded:message})
   }
+  handleExperienceOn=()=>{this.setState({experience:true})}
+  handleExperienceOff=()=>{this.setState({experience:false})}
   render() {
     return (
       <Fragment>
@@ -34,7 +44,7 @@ export default class Home extends Component {
                               des solutions informatiquesqui contribuent au <br/>
                               développement du Pays
                             </p>
-                            <button size="large" className="btn btn-lg btn-portfolio"><BoltOutlined/>CONTACT ME</button>
+                            <a size="large" href="#contact" className="btn btn-lg btn-portfolio"><BoltOutlined/>CONTACT ME</a>
                           </div>
                         </div>
                       </div>
@@ -325,11 +335,135 @@ export default class Home extends Component {
                       </div>
                       <div id="experience" className="container-fluid my-4">
                             <div className="container my-5 d-flex flex-column justify-content-center align-items-center">
-                              <h2 className="p-0 m-0 border-bottom" style={{fontWeight:900}}>Experiences</h2>
+                              <h2 className="p-0 m-0 border-bottom" style={{fontWeight:900}}>&#x27E8; <span className="" style={{fontSize:"small",color:'#576ee0'}}>03.</span> Expériences&#x27E9;</h2>
                               <p className="p-0 m-0">Qualifications</p>
                             </div>
+                            <div className="d-flex mb-5 justify-content-center align-items-center">
+                              <Button className={this.state.experience?"mx-2 text-white btn-portfolio":"mx-2 text-on text-white"} onClick={this.handleExperienceOn}>&#x27E8; <CastForEducation style={{fontSize:'16px'}}/>Educations&#x27E9;</Button>
+                              <Button className={!this.state.experience?"mx-2 text-white btn-portfolio":"mx-2 text-on text-white"} onClick={this.handleExperienceOff}>&#x27E8; <WorkOutline style={{fontSize:'16px'}}/>xpériences Professionnels&#x27E9;</Button>
+                            </div>
                             <div className="row container-fluid">
-
+                            {this.state.experience?<Timeline position="alternate">
+                                <TimelineItem>
+                                  <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
+                                      2015-2020
+                                  </TimelineOppositeContent>
+                                  <TimelineSeparator>
+                                    <TimelineConnector />
+                                      <TimelineDot>
+                                      <CastForEducation/>
+                                      </TimelineDot>
+                                      <TimelineConnector />
+                                    </TimelineSeparator>
+                                  <TimelineContent>
+                                    <h5>Diplôme d’Ingénieur d’État en Télécommunications</h5>
+                                    <h6 className="text-muted">Institut National des Télécommunications et des TICs (INTTIC) |Oran Algérie</h6>
+                                  </TimelineContent>
+                                </TimelineItem>
+                                <TimelineItem>
+                                  <TimelineOppositeContent className="text-portfolio" sx={{ m: 'auto 0',fontWeight:'lighter' }}>
+                                        2012-2015
+                                    </TimelineOppositeContent>
+                                    <TimelineSeparator>
+                                      <TimelineConnector />
+                                        <TimelineDot>
+                                        <CastForEducation/>
+                                        </TimelineDot>
+                                        <TimelineConnector />
+                                      </TimelineSeparator>
+                                    <TimelineContent>
+                                      <h5>Attestation Baccalauréat</h5>
+                                      <h6 className="text-muted">Lycée BAminata Coulibaly (LBAC) | Bamako Mali</h6>
+                                    </TimelineContent>
+                                </TimelineItem>
+                              </Timeline>:
+                            <Timeline position="alternate">
+                                <TimelineItem>
+                                  <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
+                                      07/2021- 10/2021
+                                  </TimelineOppositeContent>
+                                  <TimelineSeparator>
+                                    <TimelineConnector />
+                                      <TimelineDot>
+                                      <Work/>
+                                      </TimelineDot>
+                                      <TimelineConnector />
+                                    </TimelineSeparator>
+                                  <TimelineContent>
+                                    <h5>STAGES</h5>
+                                    <h6 className="text-muted">NG System | Full Stack Developper & Designer</h6>
+                                    <p className="" style={{fontSize:12}}>Logiciels Informatiques, Angular, Reactjs, Java Spring Boot, Nodejs, PHP, JavaScript, Photoshop, Illustration, ionic, React Native, Java, Web Service &API</p>
+                                  </TimelineContent>
+                                </TimelineItem>
+                                <TimelineItem>
+                                    <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
+                                      03/2021- 07/2021
+                                      </TimelineOppositeContent>
+                                      <TimelineSeparator>
+                                        <TimelineConnector />
+                                          <TimelineDot>
+                                          <Work/>
+                                          </TimelineDot>
+                                          <TimelineConnector />
+                                        </TimelineSeparator>
+                                      <TimelineContent>
+                                        <h5>FORMATIONS & STAGES</h5>
+                                        <h6 className="text-muted"> AFRO Engineering & TC SARL – Installation Télécom & Drive Test & Rapport</h6>
+                                        <p className="" style={{fontSize:12}}>Faisceau Hertzien (FH), DCDU, BBU, ATN, RTN, Antenne GSM (Hexa bande, Tribande, Quatribande), Swap d’Antenne Huawei & Nokia, PHU, GNEX Assistant, 4G, 3G, 2G, FPFH, BTS, Baie d’Énergie, Câble d’Alimentation, Câble Jaune-Vert (TER ou Mise à la terre), Câble Jumper, Fibre Optique, Coupleur (1+0 & 1+1), Câble IF.</p>
+                                      </TimelineContent>
+                                </TimelineItem>
+                                <TimelineItem>
+                                    <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
+                                    02/2020-04/2020
+                                      </TimelineOppositeContent>
+                                      <TimelineSeparator>
+                                        <TimelineConnector />
+                                          <TimelineDot>
+                                            <Work/>
+                                          </TimelineDot>
+                                          <TimelineConnector />
+                                        </TimelineSeparator>
+                                      <TimelineContent>
+                                        <h5>STAGE : Initiation à la Télédétection </h5>
+                                        <h6 className="text-muted">ASA (Agence Spatiales d’Algérie) & CTS (Centre des Techniques Spatiales d’Algérie)</h6>
+                                        <p className="" style={{fontSize:12}}>Machine Learning, Deep Learning, Images Satellitaires, Classification et Segmentation des Images, Python, Tensorflow (Keras API), Probabilités et Statistiques, Optimisation, Analyse des Données de la Télédétection, PCA, Notions de base sur la Télédétection.</p>
+                                      </TimelineContent>
+                                </TimelineItem>
+                                <TimelineItem>
+                                    <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
+                                    02/2020-05/2020
+                                      </TimelineOppositeContent>
+                                      <TimelineSeparator>
+                                        <TimelineConnector />
+                                          <TimelineDot>
+                                          <Work/>
+                                          </TimelineDot>
+                                          <TimelineConnector />
+                                        </TimelineSeparator>
+                                      <TimelineContent>
+                                        <h5>STAGE : Projet de Fin d’Étude</h5>
+                                        <h6 className="text-muted">CDS (Centre de Dévéloppement Satellitaires) – Implémentation et Analyse des Images Satellitaires en utilisant Machine Learning & Deep Learning | Oran Algérie</h6>
+                                        <p className="" style={{fontSize:12}}>Segmentation des Images Satellitaires avec les Deep Learning et CNN et proposé une technique d’amélioration des méthodes</p>
+                                      </TimelineContent>
+                                </TimelineItem>
+                                <TimelineItem>
+                                    <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
+                                    07/2019-08/2019
+                                      </TimelineOppositeContent>
+                                      <TimelineSeparator>
+                                        <TimelineConnector />
+                                          <TimelineDot>
+                                          <Work/>
+                                          </TimelineDot>
+                                          <TimelineConnector />
+                                        </TimelineSeparator>
+                                      <TimelineContent>
+                                        <h5>STAGES- Introduction Pratique en Réseaux & Informatiques</h5>
+                                        <h6 className="text-muted"> HTA – HASNAOUI TELECOM ALGERIA</h6>
+                                        <p className="" style={{fontSize:12}}>Administration Réseaux, Sécurité des Réseaux, Automatisation Réseaux, Cloud Storage, Compression des Données, Traitement des Signaux et Images, Réseaux de Nouvelles Génération (2G,3G & 4G), MSAN (DSLAM), IPTV, Modem.</p>
+                                      </TimelineContent>
+                                </TimelineItem>
+                              </Timeline>}
                             </div>
                       </div>
                       <div id="portfolio" className="container-fluid my-4">
