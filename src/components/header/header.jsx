@@ -1,5 +1,5 @@
-import { CodeOutlined, ContactSupportOutlined,Home,PersonOutline, PortraitOutlined,TimelineOutlined } from '@mui/icons-material';
-import {Avatar, BottomNavigation, BottomNavigationAction,Paper} from '@mui/material';
+import { CodeOutlined, ContactSupportOutlined,FacebookOutlined,Home,Instagram,LinkedIn,MailOutline,PersonOutline, PortraitOutlined,TimelineOutlined, Twitter } from '@mui/icons-material';
+import {Avatar, BottomNavigation, BottomNavigationAction,IconButton,Paper, Tooltip} from '@mui/material';
 import React, { Component, Fragment } from 'react'
 
 export default class Header extends Component {
@@ -33,30 +33,27 @@ handleSmallSideMenuOff = () =>{this.setState({open:false})}
           </div>
         </div>
 
-        <div className="mobile m-0 p-0 position-fixed" style={{height: '300px',width:'40px' ,right: '5px',bottom: '50px',zIndex: 1000}}>
-                {/* <div className={this.state.open?sidebarOn:sidebarOff}>
-                    <Tooltip placement="left" title="Home" arrow>
-                      <IconButton href="#home" className="text-white navbarItemFooter"><Home/></IconButton>
-                    </Tooltip>
-                    <Tooltip placement="left" title="About" arrow>
-                      <IconButton href="#about" className="text-white navbarItemFooter"><PersonOutline/></IconButton>
-                    </Tooltip>
-                    <Tooltip placement="left" title="Skills" arrow>
-                      <IconButton href="#skills" className="text-white navbarItemFooter"><CodeOutlined/></IconButton>
-                    </Tooltip>
-                    <Tooltip placement="left" title="Expérience" arrow>
-                      <IconButton href="#experience" className="text-white navbarItemFooter"><TimelineOutlined/></IconButton>
-                    </Tooltip>
-                    <Tooltip placement="left" title="Portfolio" arrow>
-                      <IconButton href="#portfolio" className="text-white navbarItemFooter"><PortraitOutlined/></IconButton>
-                    </Tooltip>
-                    <Tooltip placement="left" title="Contact" arrow>
-                      <IconButton href="#contact" className="text-white navbarItemFooter"><ContactSupportOutlined/></IconButton>
-                    </Tooltip>
-              </div>
-            <button onClick={this.handleSmallSideMenu} className="btn btn-sm shadow bg-portfolio position-absolute rounded-pill d-flex justify-content-center align-items-center text-light" style={{width: '40px',height: '40px',bottom: '5px',right: '5px',boxShadow: 'none'}}>
-              {!this.state.open?<MoreHoriz/>:<Close/>}
-            </button> */}
+        
+            <div className="position-fixed" style={{height: '300px',width:'40px' ,left: '5px',top:"30%",zIndex: 1000}}>
+                   <div className="desktop">
+                    <Tooltip placement="left" title="Facebook" arrow>
+                        <IconButton href="https://www.facebook.com/kondjiri.fane" target="_blank" className="text-white navbarItemFooter"><FacebookOutlined/></IconButton>
+                      </Tooltip>
+                      <Tooltip placement="left" title="LinkedIn" arrow>
+                        <IconButton href="https://www.linkedin.com/in/fane-kondjiri-16521b19a/" target="_blank"  className="text-white navbarItemFooter"><LinkedIn/></IconButton>
+                      </Tooltip>
+                      <Tooltip placement="left" title="Instagram" arrow>
+                        <IconButton href="https://www.instagram.com/kfane___/" target="_blank"  className="text-white navbarItemFooter"><Instagram/></IconButton>
+                      </Tooltip>
+                      {/* <Tooltip placement="left" title="Mail" arrow>
+                        <IconButton href="kondjiri.fane@ngsystem.net" target="_blank"  className="text-white navbarItemFooter"><MailOutline/></IconButton>
+                      </Tooltip> */}
+                      <Tooltip placement="left" title="Twitter" arrow>
+                        <IconButton href="#portfolio" target="_blank"  className="text-white navbarItemFooter"><Twitter/></IconButton>
+                      </Tooltip>
+                   </div>
+          </div>
+          <div className="mobile m-0 p-0 position-fixed" >
             <Paper className="bg-portfolio rounded-pill mobile" sx={{ position: 'fixed', bottom: 5, left: 10, right: 10 }} elevation={3}>
                   <BottomNavigation className="bg-portfolio rounded-pill text-white" style={{width:'100%'}} value={this.state.navValue} onChange={this.handleNavChange}>
                     <BottomNavigationAction className="navbarItemFooter" href="#home" label="Home" value="home" icon={<Home/>}/>
