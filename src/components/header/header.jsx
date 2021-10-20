@@ -1,5 +1,5 @@
 import { CodeOutlined, ContactSupportOutlined,Home,PersonOutline, PortraitOutlined,TimelineOutlined } from '@mui/icons-material';
-import {BottomNavigation, BottomNavigationAction,Paper} from '@mui/material';
+import {Avatar, BottomNavigation, BottomNavigationAction,Paper} from '@mui/material';
 import React, { Component, Fragment } from 'react'
 
 export default class Header extends Component {
@@ -15,21 +15,19 @@ handleSmallSideMenuOff = () =>{this.setState({open:false})}
   render() {
     return (
       <Fragment>
-        <div className="desktop m-0 p-0 bg-portfolio position-fixed" style={{height: '70px',top: 0,zIndex:1000}}>
+        <div className="desktop m-0 p-0 bg-portfolio" style={{height: '70px',top: 0,zIndex:1000}}>
           <div className="container-fluid d-flex justify-content-center align-items-center">
             <div className="col-lg-8 m-auto col-md-12 col-sm-12 col-4 d-flex justify-content-between align-items-center">
-              <div className="my-4">
+              <div className="">
                 <a href="#home" className="text-decoration-none marginItem text-light">
-                  Kondjiri <span style={{fontWeight: 700}}>FANE</span>
+                  <Avatar src="images/Fane.png" variant="circular"/>
                 </a>
               </div>
               <div className="my-4">
-                <a href="#home" className="text-decoration-none navbarItem">Home</a>
-                <a href="#about" className="text-decoration-none navbarItem">About</a>
-                <a href="#skills" className="text-decoration-none navbarItem">Skills</a>
-                <a href="#experience" className="text-decoration-none navbarItem">Experience</a>
-                <a href="#portfolio" className="text-decoration-none navbarItem">Portfolio</a>
-                <a href="#contact" className="text-decoration-none navbarItem">Contact</a>
+                <a href="#about" className="text-decoration-none navbarItem"> <span className="" style={{fontSize:"small",color:'#576ee0'}}>01.</span> About</a>
+                <a href="#skills" className="text-decoration-none navbarItem"> <span className="" style={{fontSize:"small",color:'#576ee0'}}>02.</span> Skills</a>
+                <a href="#experience" className="text-decoration-none navbarItem"> <span className="" style={{fontSize:"small",color:'#576ee0'}}>03.</span> Experience</a>
+                <a href="#contact" className="text-decoration-none navbarItem"> <span className="" style={{fontSize:"small",color:'#576ee0'}}>04.</span> Contact</a>
               </div>
             </div>
           </div>
