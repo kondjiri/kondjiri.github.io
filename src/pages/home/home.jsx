@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react'
 import Footer from '../../components/footer/footer'
 import Header from '../../components/header/header'
 import {Accordion,Button, AccordionDetails, AccordionSummary, Avatar, IconButton, LinearProgress,Typography} from "@mui/material"
-import {BoltOutlined, CastForEducation, CodeOffOutlined, Download,FlutterDash,KeyboardArrowDown, RssFeed, SettingsInputAntenna, Storage, Work, WorkOutline} from '@mui/icons-material'
+import {ArrowDownwardOutlined, BoltOutlined, Call, CastForEducation, CodeOffOutlined, Download,FlutterDash,FolderOutlined,GitHub,KeyboardArrowDown, Mail, MailOutline, PersonOutlined, Phone, Room, RssFeed, SettingsInputAntenna, Storage, Work, WorkOutline} from '@mui/icons-material'
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -14,7 +14,7 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 
 export default class Home extends Component {
   state={
-    expanded:'',
+    expanded:'panel1',
     experience:true
   }
   handleChange=(message)=>{
@@ -94,7 +94,7 @@ export default class Home extends Component {
 
                           </div>
                       </div>
-                      <div id="skills" className='container-fluid my-4'>
+                      <div id="skills" className='container-fluid my-4 '>
                           <div className="container my-5 d-flex flex-column justify-content-center align-items-center">
                             <h2 className="p-0 m-0 border-bottom" style={{fontWeight:900}}>&#x27E8; <span className="" style={{fontSize:"small",color:'#576ee0'}}>02.</span> Skills&#x27E9;</h2>
                             <p className="p-0 m-0">What I master</p>
@@ -350,7 +350,7 @@ export default class Home extends Component {
                                   </TimelineOppositeContent>
                                   <TimelineSeparator>
                                     <TimelineConnector />
-                                      <TimelineDot>
+                                      <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
                                       <CastForEducation/>
                                       </TimelineDot>
                                       <TimelineConnector />
@@ -366,7 +366,7 @@ export default class Home extends Component {
                                     </TimelineOppositeContent>
                                     <TimelineSeparator>
                                       <TimelineConnector />
-                                        <TimelineDot>
+                                        <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
                                         <CastForEducation/>
                                         </TimelineDot>
                                         <TimelineConnector />
@@ -384,7 +384,7 @@ export default class Home extends Component {
                                   </TimelineOppositeContent>
                                   <TimelineSeparator>
                                     <TimelineConnector />
-                                      <TimelineDot>
+                                      <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
                                       <Work/>
                                       </TimelineDot>
                                       <TimelineConnector />
@@ -401,7 +401,7 @@ export default class Home extends Component {
                                       </TimelineOppositeContent>
                                       <TimelineSeparator>
                                         <TimelineConnector />
-                                          <TimelineDot>
+                                          <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
                                           <Work/>
                                           </TimelineDot>
                                           <TimelineConnector />
@@ -418,7 +418,7 @@ export default class Home extends Component {
                                       </TimelineOppositeContent>
                                       <TimelineSeparator>
                                         <TimelineConnector />
-                                          <TimelineDot>
+                                          <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
                                             <Work/>
                                           </TimelineDot>
                                           <TimelineConnector />
@@ -435,7 +435,7 @@ export default class Home extends Component {
                                       </TimelineOppositeContent>
                                       <TimelineSeparator>
                                         <TimelineConnector />
-                                          <TimelineDot>
+                                          <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
                                           <Work/>
                                           </TimelineDot>
                                           <TimelineConnector />
@@ -452,7 +452,7 @@ export default class Home extends Component {
                                       </TimelineOppositeContent>
                                       <TimelineSeparator>
                                         <TimelineConnector />
-                                          <TimelineDot>
+                                          <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
                                           <Work/>
                                           </TimelineDot>
                                           <TimelineConnector />
@@ -466,16 +466,51 @@ export default class Home extends Component {
                               </Timeline>}
                             </div>
                       </div>
+                      <div className="container-fluid rounded p-0" style={{height:400,overflow:'hidden',backgroundColor:"#14203f"}}>
+                          <div className='row p-0'>
+                              <div className="col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
+                                  <h2 className="text-portfolio mx-3 my-2 text-left container rounded">Be challengeable forever</h2>
+                                  <h6 className="mx-3 container my-2" style={{fontWeight:'lighter'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, 
+                                    eius distinctio dicta illo unde voluptas perferendis! Ab, assumenda provident consectetur, 
+                                    temporibus cum reiciendis quisquam ex maiores adipisci illum commodi. Qui!
+                                  </h6>
+                                  <div className="container my-3">
+                                    <a size="large" href="#contact" className="btn btn-lg btn-portfolio"><BoltOutlined/>CONTACT ME</a>
+                                  </div>
+                              </div>
+                              <div className="col-md-6 col-sm-12 d-flex justify-content-end p-0" style={{height:400}}>
+                                <Avatar src="images/fane_kondjiri_cover.png" variant="rounded" style={{width:400,height:400}}/>
+                              </div>
+                          </div>
+                      </div>
                       <div id="portfolio" className="container-fluid my-4">
                             <div className="container my-5 d-flex flex-column justify-content-center align-items-center">
                               <h2 className="p-0 m-0 border-bottom" style={{fontWeight:900}}>Portfolio</h2>
                               <p className="p-0 m-0">Recents Works</p>
                             </div>
-                            <div className="row container-fluid">
-
+                            <div className="row container-fluid d-flex justify-content-center align-items-center">
+                                {
+                                  [1,2,3,4,5,6,7,8].map(item=>
+                                    <Typography className="shadow-sm rounded m-2" component='div' style={{height:200,width:200,backgroundColor:"#14203f"}}>
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <FolderOutlined className="text-portfolio"/>
+                                            <IconButton href="#"><GitHub className="text-portfolio"/></IconButton>
+                                        </div>
+                                        <h6 style={{fontWeight:'lighter'}}>Moodle website</h6>
+                                        <p className="text-muted" style={{fontSize:'small',fontWeight:'lighter',overflow:'hidden',height:80}}>
+                                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis ut quibusdam 
+                                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis ut quibusdam 
+                                        </p>
+                                        <p className="text-portfolio" style={{fontSize:'small',fontWeight:'lighter'}}>
+                                            Reactjs. VueJs
+                                        </p>
+                                    </Typography>
+                                    
+                                    )
+                                }
                             </div>
                       </div>
-                      <div  className="container-fluid my-4">
+                      {/* <div  className="container-fluid my-4">
                             <div className="container my-5 d-flex flex-column justify-content-center align-items-center">
                               <h2 className="p-0 m-0 border-bottom" style={{fontWeight:900}}>Testomonials</h2>
                               <p className="p-0 m-0">What they think about me</p>
@@ -483,14 +518,74 @@ export default class Home extends Component {
                             <div className="row container-fluid">
 
                             </div>
-                      </div>
+                      </div> */}
                       <div id="contact" className="container-fluid my-4">
                             <div className="container my-5 d-flex flex-column justify-content-center align-items-center">
                               <h2 className="p-0 m-0 border-bottom" style={{fontWeight:900}}>Contact</h2>
                               <p className="p-0 m-0">Get in touch/Leave a questions</p>
                             </div>
-                            <div className="row container-fluid">
-
+                              <div className="container-fluid">
+                                  <div className="row">
+                                  <div className="col-lg-4 col-md-4 col-sm-12">
+                                          <div className="row my-2">
+                                            <div className="col-lg-12 col-md-12 col-sm-6 col-12 text-white d-flex align-items-center my-3">
+                                                <span className=" d-flex align-items-center justify-content-center rounded-circle p-2 border-portfolio" style={{width:50,height:50}}><Call className="text-portfolio"/></span>
+                                               <div>
+                                                  <h6 className="mx-2 my-0 p-0 text-portfolio" style={{fontSize:12}}>Téléphone</h6>
+                                                  <h5 className="mx-2 my-0 p-0" style={{fontWeight:'lighter'}}>+22379773329</h5>
+                                               </div>
+                                            </div>
+                                            <div className="col-lg-12 col-md-12 col-sm-6 col-12 text-white d-flex align-items-center my-3">
+                                                <span className=" d-flex align-items-center justify-content-center rounded-circle p-2 border-portfolio" style={{width:50,height:50}}><MailOutline className="text-portfolio"/></span>
+                                               <div>
+                                                  <h6 className="mx-2 my-0 p-0 text-portfolio" style={{fontSize:12}}>E-mail</h6>
+                                                  <h5 className="mx-2 my-0 p-0" style={{fontWeight:'lighter'}}>kondjirif@gmail.com</h5>
+                                               </div>
+                                            </div>
+                                            <div className="col-lg-12 col-md-12 col-sm-6 col-12 text-white d-flex align-items-center my-3">
+                                                <span className=" d-flex align-items-center justify-content-center rounded-circle p-2 border-portfolio" style={{width:50,height:50}}><Room className="text-portfolio"/></span>
+                                               <div>
+                                                  <h6 className="mx-2 my-0 p-0 text-portfolio" style={{fontSize:12}}>Location</h6>
+                                                  <h5 className="mx-2 my-0 p-0" style={{fontWeight:'lighter'}}>Yirimadio (Bamako-Mali)</h5>
+                                               </div>
+                                            </div>
+                                          </div>
+                                  </div>
+                                  <div className="row container-fluid col-lg-8 col-md-8 col-sm-12">
+                                      <div className="col-md-6 col-sm-12 my-3">
+                                          <div className="border-portfolio rounded  px-2 py-1" style={{backgroundColor:"#14203f"}}>
+                                            <div>
+                                              <label htmlFor="nom" className="text-white"  style={{fontSize:15,fontWeight:'lighter'}}>Nom & Prenom <ArrowDownwardOutlined style={{fontSize:15}}/></label>
+                                            </div>
+                                            <input type="text" className="form-control border-0 shadow-none bg-transparent text-white rounded"/>
+                                          </div>
+                                      </div>
+                                      <div className="col-md-6 col-sm-12 my-3">
+                                      <div className="border-portfolio rounded  px-2 py-1" style={{backgroundColor:"#14203f"}}>
+                                            <div>
+                                              <label htmlFor="nom" className="text-white"  style={{fontSize:15,fontWeight:'lighter'}}>E-mail <ArrowDownwardOutlined style={{fontSize:15}}/></label>
+                                            </div>
+                                            <input type="text" className="form-control border-0 shadow-none bg-transparent text-white rounded"/>
+                                          </div>
+                                      </div>
+                                      <div className="col-md-12 col-sm-12 my-3">
+                                      <div className="border-portfolio rounded  px-2 py-1" style={{backgroundColor:"#14203f"}}>
+                                            <div>
+                                              <label htmlFor="nom" className="text-white"  style={{fontSize:15,fontWeight:'lighter'}}>Objet <ArrowDownwardOutlined style={{fontSize:15}}/></label>
+                                            </div>
+                                            <input type="text" className="form-control border-0 shadow-none bg-transparent text-white rounded"/>
+                                          </div>
+                                      </div>
+                                      <div className="col-sm-12 my-3">
+                                      <div className="border-portfolio rounded px-2 py-1" style={{backgroundColor:"#14203f"}}>
+                                            <div>
+                                              <label htmlFor="nom" className="text-white"  style={{fontSize:15,fontWeight:'lighter'}}>Message <ArrowDownwardOutlined style={{fontSize:15}}/></label>
+                                            </div>
+                                            <textarea type="text" style={{resize:'none',height:200}} className="form-control border-0 shadow-none bg-transparent text-white rounded"/>
+                                          </div>
+                                      </div>
+                                      </div>
+                                </div>
                             </div>
                       </div>
                   </div>

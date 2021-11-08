@@ -1,4 +1,4 @@
-import { CodeOutlined, ContactSupportOutlined,FacebookOutlined,Home,Instagram,LinkedIn,MailOutline,PersonOutline, PortraitOutlined,TimelineOutlined, Twitter } from '@mui/icons-material';
+import { ArrowUpward, CodeOutlined, ContactSupportOutlined,FacebookOutlined,Home,Instagram,LinkedIn,PersonOutline, PortraitOutlined,TimelineOutlined, Twitter } from '@mui/icons-material';
 import {Avatar, BottomNavigation, BottomNavigationAction,IconButton,Paper, Tooltip} from '@mui/material';
 import React, { Component, Fragment } from 'react'
 
@@ -15,7 +15,7 @@ handleSmallSideMenuOff = () =>{this.setState({open:false})}
   render() {
     return (
       <Fragment>
-        <div className="desktop m-0 p-0 bg-portfolio" style={{height: '70px',top: 0,zIndex:1000}}>
+        <div id="top" className="desktop m-0 p-0 bg-portfolio" style={{height: '70px',top: 0,zIndex:1000}}>
           <div className="container-fluid d-flex justify-content-center align-items-center">
             <div className="col-lg-8 m-auto col-md-12 col-sm-12 col-4 d-flex justify-content-between align-items-center">
               <div className="">
@@ -89,6 +89,11 @@ handleSmallSideMenuOff = () =>{this.setState({open:false})}
                     />
                   </BottomNavigation>
             </Paper>
+    </div>
+    <div className="position-fixed" style={{right: '15px',bottom:'15px',zIndex: 1000}}>
+      <Tooltip title="Aller en haut" arrow placement="left-end">
+        <IconButton href="#top" className="btn-portfolio"><ArrowUpward/></IconButton>
+      </Tooltip>
     </div>
       </Fragment>
     )

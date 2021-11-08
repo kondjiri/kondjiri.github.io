@@ -12,7 +12,7 @@ export default class Footer extends Component {
       
     return (
       <Fragment>
-          <div className="container-fluid m-0 px-0 bg-portfolio border-top" style={{paddingBottom:50,paddingTop:0}}>
+          <div className="container-fluid m-0 px-0 bg-portfolio" style={{paddingBottom:50,paddingTop:0}}>
                 <div className="container-fluid d-flex justify-content-center align-items-center flex-column">
                     <div className="col-lg-8 m-auto row col-md-12 col-sm-12 col-4">
                         <div className="mb-3 mt-3 col-md-4 col-sm-4">

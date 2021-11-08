@@ -14,6 +14,9 @@ body,html{
 input::placeholder{
     font-size: 14px;
 }
+.border-portfolio{
+    border: 1px solid #576ee09d !important;
+}
 
 .desktop{
     display: block !important;
