@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react'
 import Footer from '../../components/footer/footer'
 import Header from '../../components/header/header'
 import {Accordion,Button, AccordionDetails, AccordionSummary, Avatar, IconButton, LinearProgress,Typography} from "@mui/material"
-import {ArrowDownwardOutlined, BoltOutlined, Call, CastForEducation, CodeOffOutlined, Download,FlutterDash,FolderOutlined,GitHub,KeyboardArrowDown, Mail, MailOutline, PersonOutlined, Phone, Room, RssFeed, SettingsInputAntenna, Storage, Work, WorkOutline} from '@mui/icons-material'
+import {ArrowDownwardOutlined, BoltOutlined, Call, CastForEducation, CodeOffOutlined, Download,FlutterDash,FolderOutlined,GitHub,KeyboardArrowDown, MailOutline, Room, RssFeed, SettingsInputAntenna, Storage, Work, WorkOutline} from '@mui/icons-material'
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
