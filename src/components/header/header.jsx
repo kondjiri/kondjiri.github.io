@@ -1,6 +1,7 @@
-import { ArrowUpward, CodeOutlined, ContactSupportOutlined,FacebookOutlined,Home,Instagram,LinkedIn,PersonOutline, PortraitOutlined,TimelineOutlined, Twitter } from '@mui/icons-material';
+import { ArrowUpward, CodeOutlined, ContactSupportOutlined,FacebookOutlined,Home,Instagram,LinkedIn,PersonOutline, GitHub,PortraitOutlined,TimelineOutlined, Twitter } from '@mui/icons-material';
 import {Avatar, BottomNavigation, BottomNavigationAction,IconButton,Paper, Tooltip} from '@mui/material';
 import React, { Component, Fragment } from 'react'
+import {data} from '../../stores/store'
 
 export default class Header extends Component {
   state={
@@ -20,7 +21,7 @@ handleSmallSideMenuOff = () =>{this.setState({open:false})}
             <div className="col-lg-8 m-auto col-md-12 col-sm-12 col-4 d-flex justify-content-between align-items-center">
               <div className="">
                 <a href="#home" className="text-decoration-none marginItem text-light">
-                  <Avatar src="images/Fane.png" variant="circular"/>
+                  <Avatar src={data.image} variant="circular"/>
                 </a>
               </div>
               <div className="my-4">
@@ -37,23 +38,20 @@ handleSmallSideMenuOff = () =>{this.setState({open:false})}
             <div className="position-fixed" style={{height: '300px',width:'40px' ,left: '5px',top:"30%",zIndex: 1000}}>
                    <div className="desktop">
                     <Tooltip placement="left" title="Facebook" arrow>
-                        <IconButton href="https://www.facebook.com/kondjiri.fane" target="_blank" className="text-white navbarItemFooter"><FacebookOutlined/></IconButton>
+                        <IconButton href={data.facebook} target="_blank" className="text-white navbarItemFooter"><FacebookOutlined/></IconButton>
                       </Tooltip>
                       <Tooltip placement="left" title="LinkedIn" arrow>
-                        <IconButton href="https://www.linkedin.com/in/fane-kondjiri-16521b19a/" target="_blank"  className="text-white navbarItemFooter"><LinkedIn/></IconButton>
+                        <IconButton href={data.linkedin} target="_blank"  className="text-white navbarItemFooter"><LinkedIn/></IconButton>
                       </Tooltip>
                       <Tooltip placement="left" title="Instagram" arrow>
-                        <IconButton href="https://www.instagram.com/kfane___/" target="_blank"  className="text-white navbarItemFooter"><Instagram/></IconButton>
+                        <IconButton href={data.instagram} target="_blank"  className="text-white navbarItemFooter"><Instagram/></IconButton>
                       </Tooltip>
-                      {/* <Tooltip placement="left" title="Mail" arrow>
-                        <IconButton href="kondjiri.fane@ngsystem.net" target="_blank"  className="text-white navbarItemFooter"><MailOutline/></IconButton>
-                      </Tooltip> */}
-                      <Tooltip placement="left" title="Twitter" arrow>
-                        <IconButton href="#portfolio" target="_blank"  className="text-white navbarItemFooter"><Twitter/></IconButton>
+                      <Tooltip placement="left" title="Github" arrow>
+                        <IconButton href={data.github} target="_blank"  className="text-white navbarItemFooter"><GitHub/></IconButton>
                       </Tooltip>
                    </div>
           </div>
-          <div className="mobile m-0 p-0 position-fixed" >
+          <div className="mobile m-0 p-0 position-fixed" style={{zIndex:2000}}>
             <Paper className="bg-portfolio rounded-pill mobile" sx={{ position: 'fixed', bottom: 5, left: 10, right: 10 }} elevation={3}>
                   <BottomNavigation className="bg-portfolio rounded-pill text-white" style={{width:'100%'}} value={this.state.navValue} onChange={this.handleNavChange}>
                     <BottomNavigationAction className="navbarItemFooter" href="#home" label="Home" value="home" icon={<Home/>}/>

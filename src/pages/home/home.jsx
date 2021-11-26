@@ -11,6 +11,7 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+import {data} from '../../stores/store'
 
 export default class Home extends Component {
   state={
@@ -32,17 +33,14 @@ export default class Home extends Component {
                       <div id="home" className="container-fluid" style={{minHeight: '60vh'}}>
                         <div className="row">
                           <div className="col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center align-items-center py-3">
-                             <Avatar src="images/kfane02.jpeg"  sx={{ width: 400, height: 400,display:"flex",alignItems:"center",justifyContent:"center" }} variant="circular"/>
+                             <Avatar src={data.porfile}  sx={{ width: 400, height: 400,display:"flex",alignItems:"center",justifyContent:"center" }} variant="circular"/>
                           </div>
                           <div className="col-lg-6 col-md-6 col-sm-12 col-12 py-3">
-                            <h6 className="text-portfolio">Hi, they call me</h6>
-                            <h1 className="text-left text-white" style={{fontWeight:"bolder"}}>Fané Kondjiri</h1>
-                            <h3 className="mb-4 text-left text-muted" style={{fontWeight:"bolder"}}>Ingénieur Télécom | Informatiques | Réseaux</h3>
+                            <h6 className="text-portfolio">{data.messageAcceuil}</h6>
+                            <h1 className="text-left text-white" style={{fontWeight:"bolder"}}>{data.nom +' '+data.prenom}</h1>
+                            <h3 className="mb-4 text-left text-muted" style={{fontWeight:"bolder"}}>{data.job}</h3>
                             <p className="text-white" style={{textAlign:'justify'}}>
-                              Je suis passionné par la Technologie<br/>
-                              Ma plus grande motivation est de pouvoir mettre en place<br/>
-                              des solutions informatiquesqui contribuent au <br/>
-                              développement du Pays
+                              {data.description}
                             </p>
                             <a size="large" href="#contact" className="btn btn-lg btn-portfolio"><BoltOutlined/>CONTACT ME</a>
                           </div>
@@ -56,40 +54,30 @@ export default class Home extends Component {
                           <div className="row container-fluid">
                             
                               <div className="col-lg-6 col-md-6 col-sm-12 col-12 d-flex mt-4 flex-column">
+                                <h6 className="text-portfolio">By the way, My name is</h6>
+                                <h1 className="text-left text-white" style={{fontWeight:"bolder"}}>{data.nom +' '+data.prenom}</h1>
+                                <h5 className="mb-4 text-left text-portfolio" style={{fontWeight:"lighter"}}>{data.job}</h5>
                                   <p className="text-muted"  style={{textAlign:'left'}}>
-                                    Je suis passionné par la Technologie<br/>
-                                    Ma plus grande motivation est de pouvoir mettre en place<br/>
-                                    des solutions informatiquesqui contribuent au <br/>
-                                    développement du Pays
-                                    My name's Younes AGABI. I am an artificial intelligence engineer and
-                                     a front-end developer with +3 years of experience. 
-                                     I did my internship at the University of Deakin in Australia
-                                      and i'm interested in UI & UX Web Design trends.
-                                       I mainly use Vue js to realize my web projects as
-                                        well as some knowledge in Laravel for the BackEnd. 
-                                        I like to make fun and interactive things with code
-                                         because in the end, there are three possible reactions
-                                          to any design: yes, no and WAHOU!, the third one is 
-                                          the one I'm aiming for.
+                                   {data.about.description}
                                   </p>
                                   <div className="container-fluid p-0 d-flex justify-content-between align-items-center">
                                       <div className="container my-5 d-flex flex-column text-center justify-content-center align-items-center">
-                                        <h3 className="p-0 m-0 text-" style={{fontWeight:900}}>3+</h3>
+                                        <h3 className="p-0 m-0 text-" style={{fontWeight:900}}>{data.about.experiences}+</h3>
                                         <p className="p-0 m-0" style={{fontSize:'small'}}>Expériences</p>
                                       </div>
                                       <div className="container my-5 d-flex flex-column text-center justify-content-center align-items-center">
-                                        <h3 className="p-0 m-0" style={{fontWeight:900}}>3+</h3>
+                                        <h3 className="p-0 m-0" style={{fontWeight:900}}>{data.about.projects}+</h3>
                                         <p className="p-0 m-0" style={{fontSize:'small'}}>Projects</p>
                                       </div>
                                       <div className="container my-5 d-flex flex-column text-center justify-content-center align-items-center">
-                                        <h3 className="p-0 m-0" style={{fontWeight:900}}>3+</h3>
+                                        <h3 className="p-0 m-0" style={{fontWeight:900}}>{data.about.company}+</h3>
                                         <p className="p-0 m-0" style={{fontSize:'small'}}>Company</p>
                                       </div>
                                   </div>
-                                  <button size="large" className="btn btn-lg btn-portfolio"><Download/>DOWNLOAD MY CV</button>
+                                  <a href="files/fane_kondjiri_cv_version_francais.pdf" download><button  size="large" className="btn btn-lg btn-portfolio"><Download/>DOWNLOAD MY CV</button></a>
                               </div>
                               <div className="col-lg-6 col-md-6 col-sm-12 col-12 mt-4">
-                                  <Avatar src="images/kfane01.jpeg" variant="rounded" style={{width:'100%',height:'100%'}} />
+                                  <Avatar src={data.imgDesc} variant="rounded" style={{width:'100%',height:'100%'}} />
                               </div>
 
                           </div>
@@ -113,83 +101,18 @@ export default class Home extends Component {
                                     </AccordionSummary>
                                     <AccordionDetails className="bg-portfolio">
                                       <Typography className='container'>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>Reactjs</span>
-                                                  <span>90%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={90} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>HTML & CSS</span>
-                                                  <span>90%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={90} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>Bootstrap</span>
-                                                  <span>90%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={90} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>JavaScript</span>
-                                                  <span>75%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={75} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>Git</span>
-                                                  <span>70%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={70} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>Angular Js</span>
-                                                  <span>80%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={80} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>Jquery</span>
-                                                  <span>70%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={70} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>Ionic/Angular</span>
-                                                  <span>80%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={80} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>Material UI</span>
-                                                  <span>90%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={90} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>Semantic UI</span>
-                                                  <span>60%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={60} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>Prime NG</span>
-                                                  <span>65%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={65} />
-                                          </div>
+                                      {
+                                            data.skills.frontend.map(front=>
+                                              <div className="mb-2">
+                                                  <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
+                                                      <span>{front.name}</span>
+                                                      <span>{front.percent}%</span>
+                                                  </p>
+                                                  <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={front.percent} />
+                                              </div>
+                                              
+                                              )
+                                          }
                                         </Typography>
                                     </AccordionDetails>
                                   </Accordion>
@@ -205,64 +128,20 @@ export default class Home extends Component {
                                         <IconButton className=" text-white text-on" onClick={()=>{this.handleChange('panel2')}}><KeyboardArrowDown/></IconButton> 
                                     </AccordionSummary>
                                     <AccordionDetails className="bg-portfolio">
-                                        <Typography className='container'>
-                                        <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>NodeJs</span>
-                                                  <span>60%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={60} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>ExpressJs</span>
-                                                  <span>80%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={75} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>Java/Spring Boot</span>
-                                                  <span>70%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={70} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>PHP</span>
-                                                  <span>80%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={80} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>SQL/NoSQL</span>
-                                                  <span>70%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={70} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>Mongo/Mongoose</span>
-                                                  <span>75%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={75} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>MySQL</span>
-                                                  <span>85%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={85} />
-                                          </div>
-                                          <div className="mb-2">
-                                              <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
-                                                  <span>SquelPro</span>
-                                                  <span>80%</span>
-                                              </p>
-                                              <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={80} />
-                                          </div>
-                                          </Typography>
+                                        <Typography className='container  rounded p-2 portfolio-border'>
+                                              {
+                                                data.skills.backend.map(back=>
+                                                  <div className="mb-2">
+                                                      <p className="p-0 mb-2 d-flex justify-content-between  text-white" style={{fontSize:'small'}}>
+                                                          <span>{back.name}</span>
+                                                          <span>{back.percent}%</span>
+                                                      </p>
+                                                      <LinearProgress variant="determinate" className="rounded-pill" style={{height:8,width:'100%'}} value={back.percent} />
+                                                  </div>
+                                                  
+                                                  )
+                                              }
+                                        </Typography>
                                     </AccordionDetails>
                                   </Accordion>
                                   <Accordion className="shadow-none bg-portfolio border-0 p-0 m-0" expanded={this.state.expanded==='panel3'}>
@@ -277,12 +156,10 @@ export default class Home extends Component {
                                         <IconButton className=" text-white text-on" onClick={()=>{this.handleChange('panel3')}}><KeyboardArrowDown/></IconButton> 
                                     </AccordionSummary>
                                     <AccordionDetails>
-                                      <Typography className='container'>
+                                      <Typography className='container  rounded p-2 portfolio-border' style={{backgroundColor:"#14203f"}}>
                                           <p className="p-0 m-0  text-white" style={{fontSize:'small'}}>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-                                            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                            sit amet blandit leo lobortis eget.
+                                                LAN, WAN, RIP (v1 & v2), OSPF, BGP, MPLS, ACL, NAT, PAT, IPV4, IPV6, PPP, AAA, PPoE,
+                                                VLAN, VTP, DHCP, HDLC, DNS, HTTP, VPN, TCP/IP
                                           </p>
                                         </Typography>
                                     </AccordionDetails>
@@ -299,12 +176,13 @@ export default class Home extends Component {
                                         <IconButton className=" text-white text-on" onClick={()=>{this.handleChange('panel4')}}><KeyboardArrowDown/></IconButton> 
                                     </AccordionSummary>
                                     <AccordionDetails className="bg-portfolio">
-                                      <Typography className='container'>
+                                      <Typography className='container rounded p-2 portfolio-border'  style={{backgroundColor:"#14203f"}}>
                                         <p className="p-0 m-0 text-white" style={{fontSize:'small'}}>
-                                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                          malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-                                          sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                          sit amet blandit leo lobortis eget.
+                                          Technologies Radio Mobiles(4G), DBS & Swap d’Antenne, Cryptographie (Symétrique
+                                          & Asymétrique), Réseaux de Transport Numérique (MIC, PDH & SDH), Fibres Optiques,
+                                          VoIP, Traitement de Signaux Numériques et Analogiques, IPTV, FTTH, ATM, RRU
+                                          (5502,5508,5509), RRH, DCDU (12B,16B), BBU (5900 & 3900), Antenne GSM (Hexabande,
+                                          bibande, tribande), RTN, ATN, Faisceau Hertzien (Liaison & Configuration)
                                         </p>
                                       </Typography>
                                     </AccordionDetails>
@@ -314,19 +192,17 @@ export default class Home extends Component {
                                             <FlutterDash className="text-portfolio" style={{fontSize:'3rem'}}/>
                                           <Typography className="d-flex container-fluid align-items-center">
                                               <Typography>
-                                                    <h5 className="p-0 m-0  text-white" style={{fontWeight:'bolder'}}>&#x27E8;AI&#x27E9;</h5>
+                                                    <h5 className="p-0 m-0  text-white" style={{fontWeight:'bolder'}}>&#x27E8;Informatiques&#x27E9;</h5>
                                                     <p className="p-0 m-0  text-white" style={{fontSize:'small'}}>Projects</p>
                                               </Typography>
                                           </Typography>
                                         <IconButton className=" text-white text-on" onClick={()=>{this.handleChange('panel5')}}><KeyboardArrowDown/></IconButton> 
                                     </AccordionSummary>
                                     <AccordionDetails className="bg-portfolio">
-                                      <Typography className='container'>
+                                      <Typography className='container  rounded p-2 portfolio-border'  style={{backgroundColor:"#14203f"}}>
                                         <p className="p-0 m-0 text-white" style={{fontSize:'small'}}>
-                                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                          malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-                                          sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                          sit amet blandit leo lobortis eget.
+                                            Virtualisation (Stockage, Réseaux, Application, Docker), Cloud Storage (OpenFiler),
+                                            Système Distribué, programmation réseaux, Data mapping,
                                         </p>
                                       </Typography>
                                     </AccordionDetails>
@@ -344,25 +220,11 @@ export default class Home extends Component {
                             </div>
                             <div className="row container-fluid">
                             {this.state.experience?<Timeline position="alternate">
-                                <TimelineItem>
-                                  <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
-                                      2015-2020
-                                  </TimelineOppositeContent>
-                                  <TimelineSeparator>
-                                    <TimelineConnector />
-                                      <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
-                                      <CastForEducation/>
-                                      </TimelineDot>
-                                      <TimelineConnector />
-                                    </TimelineSeparator>
-                                  <TimelineContent>
-                                    <h5>Diplôme d’Ingénieur d’État en Télécommunications</h5>
-                                    <h6 className="text-muted">Institut National des Télécommunications et des TICs (INTTIC) |Oran Algérie</h6>
-                                  </TimelineContent>
-                                </TimelineItem>
+                            {
+                                  data.skills.educations.map(edu=>
                                 <TimelineItem>
                                   <TimelineOppositeContent className="text-portfolio" sx={{ m: 'auto 0',fontWeight:'lighter' }}>
-                                        2012-2015
+                                        {edu.annee}
                                     </TimelineOppositeContent>
                                     <TimelineSeparator>
                                       <TimelineConnector />
@@ -372,107 +234,41 @@ export default class Home extends Component {
                                         <TimelineConnector />
                                       </TimelineSeparator>
                                     <TimelineContent>
-                                      <h5>Attestation Baccalauréat</h5>
-                                      <h6 className="text-muted">Lycée BAminata Coulibaly (LBAC) | Bamako Mali</h6>
+                                      <h5>{edu.diplome}</h5>
+                                      <h6 className="text-muted">{edu.school}</h6>
                                     </TimelineContent>
-                                </TimelineItem>
+                                </TimelineItem>)}
                               </Timeline>:
                             <Timeline position="alternate">
-                                <TimelineItem>
-                                  <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
-                                      07/2021- 10/2021
-                                  </TimelineOppositeContent>
-                                  <TimelineSeparator>
-                                    <TimelineConnector />
-                                      <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
-                                      <Work/>
-                                      </TimelineDot>
-                                      <TimelineConnector />
-                                    </TimelineSeparator>
-                                  <TimelineContent>
-                                    <h5>STAGES</h5>
-                                    <h6 className="text-muted">NG System | Full Stack Developper & Designer</h6>
-                                    <p className="" style={{fontSize:12}}>Logiciels Informatiques, Angular, Reactjs, Java Spring Boot, Nodejs, PHP, JavaScript, Photoshop, Illustration, ionic, React Native, Java, Web Service &API</p>
-                                  </TimelineContent>
-                                </TimelineItem>
-                                <TimelineItem>
-                                    <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
-                                      03/2021- 07/2021
-                                      </TimelineOppositeContent>
-                                      <TimelineSeparator>
-                                        <TimelineConnector />
-                                          <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
-                                          <Work/>
-                                          </TimelineDot>
+                                {
+                                  data.skills.experiences.map(exp=>
+                                    <TimelineItem>
+                                        <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
+                                            {exp.period}
+                                        </TimelineOppositeContent>
+                                        <TimelineSeparator>
                                           <TimelineConnector />
-                                        </TimelineSeparator>
-                                      <TimelineContent>
-                                        <h5>FORMATIONS & STAGES</h5>
-                                        <h6 className="text-muted"> AFRO Engineering & TC SARL – Installation Télécom & Drive Test & Rapport</h6>
-                                        <p className="" style={{fontSize:12}}>Faisceau Hertzien (FH), DCDU, BBU, ATN, RTN, Antenne GSM (Hexa bande, Tribande, Quatribande), Swap d’Antenne Huawei & Nokia, PHU, GNEX Assistant, 4G, 3G, 2G, FPFH, BTS, Baie d’Énergie, Câble d’Alimentation, Câble Jaune-Vert (TER ou Mise à la terre), Câble Jumper, Fibre Optique, Coupleur (1+0 & 1+1), Câble IF.</p>
-                                      </TimelineContent>
-                                </TimelineItem>
-                                <TimelineItem>
-                                    <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
-                                    02/2020-04/2020
-                                      </TimelineOppositeContent>
-                                      <TimelineSeparator>
-                                        <TimelineConnector />
-                                          <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
+                                            <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
                                             <Work/>
-                                          </TimelineDot>
-                                          <TimelineConnector />
-                                        </TimelineSeparator>
-                                      <TimelineContent>
-                                        <h5>STAGE : Initiation à la Télédétection </h5>
-                                        <h6 className="text-muted">ASA (Agence Spatiales d’Algérie) & CTS (Centre des Techniques Spatiales d’Algérie)</h6>
-                                        <p className="" style={{fontSize:12}}>Machine Learning, Deep Learning, Images Satellitaires, Classification et Segmentation des Images, Python, Tensorflow (Keras API), Probabilités et Statistiques, Optimisation, Analyse des Données de la Télédétection, PCA, Notions de base sur la Télédétection.</p>
-                                      </TimelineContent>
-                                </TimelineItem>
-                                <TimelineItem>
-                                    <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
-                                    02/2020-05/2020
-                                      </TimelineOppositeContent>
-                                      <TimelineSeparator>
-                                        <TimelineConnector />
-                                          <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
-                                          <Work/>
-                                          </TimelineDot>
-                                          <TimelineConnector />
-                                        </TimelineSeparator>
-                                      <TimelineContent>
-                                        <h5>STAGE : Projet de Fin d’Étude</h5>
-                                        <h6 className="text-muted">CDS (Centre de Dévéloppement Satellitaires) – Implémentation et Analyse des Images Satellitaires en utilisant Machine Learning & Deep Learning | Oran Algérie</h6>
-                                        <p className="" style={{fontSize:12}}>Segmentation des Images Satellitaires avec les Deep Learning et CNN et proposé une technique d’amélioration des méthodes</p>
-                                      </TimelineContent>
-                                </TimelineItem>
-                                <TimelineItem>
-                                    <TimelineOppositeContent className="text-portfolio"  sx={{ m: 'auto 0',fontWeight:'lighter' }}>
-                                    07/2019-08/2019
-                                      </TimelineOppositeContent>
-                                      <TimelineSeparator>
-                                        <TimelineConnector />
-                                          <TimelineDot className="text-portfolio" style={{backgroundColor:"#14203f"}}>
-                                          <Work/>
-                                          </TimelineDot>
-                                          <TimelineConnector />
-                                        </TimelineSeparator>
-                                      <TimelineContent>
-                                        <h5>STAGES- Introduction Pratique en Réseaux & Informatiques</h5>
-                                        <h6 className="text-muted"> HTA – HASNAOUI TELECOM ALGERIA</h6>
-                                        <p className="" style={{fontSize:12}}>Administration Réseaux, Sécurité des Réseaux, Automatisation Réseaux, Cloud Storage, Compression des Données, Traitement des Signaux et Images, Réseaux de Nouvelles Génération (2G,3G & 4G), MSAN (DSLAM), IPTV, Modem.</p>
-                                      </TimelineContent>
-                                </TimelineItem>
+                                            </TimelineDot>
+                                            <TimelineConnector />
+                                          </TimelineSeparator>
+                                        <TimelineContent>
+                                          <h5>{exp.job}</h5>
+                                          <h6 className="text-muted">{exp.company}</h6>
+                                          <p className="" style={{fontSize:12}}>{exp.target}</p>
+                                        </TimelineContent>
+                                      </TimelineItem>
+                                    )
+                                }
                               </Timeline>}
                             </div>
                       </div>
                       <div className="container-fluid rounded p-0" style={{height:400,overflow:'hidden',backgroundColor:"#14203f"}}>
                           <div className='row p-0'>
                               <div className="col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
-                                  <h2 className="text-portfolio mx-3 my-2 text-left container rounded">Be challengeable forever</h2>
-                                  <h6 className="mx-3 container my-2" style={{fontWeight:'lighter'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, 
-                                    eius distinctio dicta illo unde voluptas perferendis! Ab, assumenda provident consectetur, 
-                                    temporibus cum reiciendis quisquam ex maiores adipisci illum commodi. Qui!
+                                  <h2 className="text-portfolio mx-3 my-2 text-left container rounded">MON CONSEIL PERSONNEL</h2>
+                                  <h6 className="mx-3 container my-2" style={{fontWeight:'lighter'}}> {data.conseil}
                                   </h6>
                                   <div className="container my-3">
                                     <a size="large" href="#contact" className="btn btn-lg btn-portfolio"><BoltOutlined/>CONTACT ME</a>
@@ -489,20 +285,19 @@ export default class Home extends Component {
                               <p className="p-0 m-0">Recents Works</p>
                             </div>
                             <div className="row container-fluid d-flex justify-content-center align-items-center">
-                                {
-                                  [1,2,3,4,5,6,7,8].map(item=>
+                            {
+                                  data.skills.portfolio.map(port=>
                                     <Typography className="shadow-sm rounded m-2" component='div' style={{height:200,width:200,backgroundColor:"#14203f"}}>
                                         <div className="d-flex justify-content-between align-items-center">
                                             <FolderOutlined className="text-portfolio"/>
-                                            <IconButton href="#"><GitHub className="text-portfolio"/></IconButton>
+                                            <IconButton href={port.link}><GitHub className="text-portfolio"/></IconButton>
                                         </div>
-                                        <h6 style={{fontWeight:'lighter'}}>Moodle website</h6>
+                                        <h6 style={{fontWeight:'lighter'}}>{port.title}</h6>
                                         <p className="text-muted" style={{fontSize:'small',fontWeight:'lighter',overflow:'hidden',height:80}}>
-                                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis ut quibusdam 
-                                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis ut quibusdam 
+                                        {port.description}
                                         </p>
                                         <p className="text-portfolio" style={{fontSize:'small',fontWeight:'lighter'}}>
-                                            Reactjs. VueJs
+                                           {port.technologies}
                                         </p>
                                     </Typography>
                                     
@@ -532,21 +327,21 @@ export default class Home extends Component {
                                                 <span className=" d-flex align-items-center justify-content-center rounded-circle p-2 border-portfolio" style={{width:50,height:50}}><Call className="text-portfolio"/></span>
                                                <div>
                                                   <h6 className="mx-2 my-0 p-0 text-portfolio" style={{fontSize:12}}>Téléphone</h6>
-                                                  <h5 className="mx-2 my-0 p-0" style={{fontWeight:'lighter'}}>+22379773329</h5>
+                                                  <h5 className="mx-2 my-0 p-0" style={{fontWeight:'lighter'}}>{data.tel}</h5>
                                                </div>
                                             </div>
                                             <div className="col-lg-12 col-md-12 col-sm-6 col-12 text-white d-flex align-items-center my-3">
                                                 <span className=" d-flex align-items-center justify-content-center rounded-circle p-2 border-portfolio" style={{width:50,height:50}}><MailOutline className="text-portfolio"/></span>
                                                <div>
                                                   <h6 className="mx-2 my-0 p-0 text-portfolio" style={{fontSize:12}}>E-mail</h6>
-                                                  <h5 className="mx-2 my-0 p-0" style={{fontWeight:'lighter'}}>kondjirif@gmail.com</h5>
+                                                  <h5 className="mx-2 my-0 p-0" style={{fontWeight:'lighter'}}>{data.mail}</h5>
                                                </div>
                                             </div>
                                             <div className="col-lg-12 col-md-12 col-sm-6 col-12 text-white d-flex align-items-center my-3">
                                                 <span className=" d-flex align-items-center justify-content-center rounded-circle p-2 border-portfolio" style={{width:50,height:50}}><Room className="text-portfolio"/></span>
                                                <div>
                                                   <h6 className="mx-2 my-0 p-0 text-portfolio" style={{fontSize:12}}>Location</h6>
-                                                  <h5 className="mx-2 my-0 p-0" style={{fontWeight:'lighter'}}>Yirimadio (Bamako-Mali)</h5>
+                                                  <h5 className="mx-2 my-0 p-0" style={{fontWeight:'lighter'}}>{data.location}</h5>
                                                </div>
                                             </div>
                                           </div>
@@ -583,6 +378,9 @@ export default class Home extends Component {
                                             </div>
                                             <textarea type="text" style={{resize:'none',height:200}} className="form-control border-0 shadow-none bg-transparent text-white rounded"/>
                                           </div>
+                                      </div>
+                                      <div className="container my-3">
+                                        <a size="large" href="#contact" className="btn btn-lg btn-portfolio"><BoltOutlined/>ENVOYER VOTRE MESSAGE</a>
                                       </div>
                                       </div>
                                 </div>

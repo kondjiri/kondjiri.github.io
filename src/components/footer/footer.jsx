@@ -1,5 +1,6 @@
 import { Facebook, GitHub, Instagram, LinkedIn} from '@mui/icons-material'
 import React, { Component, Fragment } from 'react'
+import {data} from '../../stores/store'
 
 export default class Footer extends Component {
     state={
@@ -17,8 +18,8 @@ export default class Footer extends Component {
                     <div className="col-lg-8 m-auto row col-md-12 col-sm-12 col-4">
                         <div className="mb-3 mt-3 col-md-4 col-sm-4">
                             <a href="#home" className="text-decoration-none marginItem text-light">
-                                <h2 className="m-0 p-0" style={{fontWeight: 700}}>FANE</h2>
-                                <p>kondjirif@gmail.com</p>
+                                <h2 className="m-0 p-0" style={{fontWeight: 700}}>{data.nom}</h2>
+                                <p>{data.mail}</p>
                             </a>
                         </div>
                         <div className="mb-3 mt-3 col-md-8 col-sm-8 row">
@@ -30,14 +31,14 @@ export default class Footer extends Component {
                         </div>
                     </div>
                     <div className="my-2">
-                        <a href="https://github.com/kondjiri" target="_blank" className="text-decoration-none navbarItemFooter mx-2" rel="noreferrer"><GitHub/></a>
-                        <a href="https://www.linkedin.com/in/fane-kondjiri-16521b19a/" target="_blank" className="text-decoration-none navbarItemFooter mx-2" rel="noreferrer"><LinkedIn/></a>
-                        <a href="https://www.facebook.com/kondjiri.fane" target="_blank" className="text-decoration-none navbarItemFooter mx-2" rel="noreferrer"><Facebook/></a>
-                        <a href="https://www.instagram.com/kfane___/" target="_blank" className="text-decoration-none navbarItemFooter mx-2" rel="noreferrer"><Instagram/></a>
+                        <a href={data.github} target="_blank" className="text-decoration-none navbarItemFooter mx-2" rel="noreferrer"><GitHub/></a>
+                        <a href={data.linkedin} target="_blank" className="text-decoration-none navbarItemFooter mx-2" rel="noreferrer"><LinkedIn/></a>
+                        <a href={data.facebook} target="_blank" className="text-decoration-none navbarItemFooter mx-2" rel="noreferrer"><Facebook/></a>
+                        <a href={data.instagram} target="_blank" className="text-decoration-none navbarItemFooter mx-2" rel="noreferrer"><Instagram/></a>
 
                     </div>
                     <div className=" mt-3">
-                        <h6 className="text-light" style={{fontWeight: 'lighter',fontSize: 'small'}}>No Rights Reserved</h6>
+                        <h6 className="text-light" style={{fontWeight: 'lighter',fontSize: 'small'}}>Rights Reserved to @Fané Design</h6>
                     </div>
                    
                 </div>
