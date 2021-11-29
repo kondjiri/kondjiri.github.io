@@ -27,7 +27,7 @@ export default class Home extends Component {
     return (
       <Fragment>
           <Header/>
-          <div className="container-fluid m-0 paddingTop" style={{minHeight: '100vh',paddingLeft:0,paddingRight:0}}>
+          <div className="container-fluid m-0 paddingTop bg-portfolio" style={{minHeight: '100vh',paddingLeft:0,paddingRight:0}}>
               <div className="container-fluid p-0 d-flex justify-content-center align-items-center">
                   <div className="col-lg-8 m-auto col-md-12 flex-column col-sm-12 col-12 d-flex justify-content-between align-items-center p-0">
                       <div id="home" className="container-fluid" style={{minHeight: '60vh'}}>
@@ -38,8 +38,8 @@ export default class Home extends Component {
                           <div className="col-lg-6 col-md-6 col-sm-12 col-12 py-3">
                             <h6 className="text-portfolio">{data.messageAcceuil}</h6>
                             <h1 className="text-left text-white" style={{fontWeight:"bolder"}}>{data.nom +' '+data.prenom}</h1>
-                            <h3 className="mb-4 text-left text-muted" style={{fontWeight:"bolder"}}>{data.job}</h3>
-                            <p className="text-white" style={{textAlign:'justify'}}>
+                            <h3 className="mb-4 text-left text-portfolio" style={{fontWeight:"bolder"}}>{data.job}</h3>
+                            <p className="text-white">
                               {data.description}
                             </p>
                             <a size="large" href="#contact" className="btn btn-lg btn-portfolio"><BoltOutlined/>CONTACT ME</a>
@@ -57,7 +57,7 @@ export default class Home extends Component {
                                 <h6 className="text-portfolio">By the way, My name is</h6>
                                 <h1 className="text-left text-white" style={{fontWeight:"bolder"}}>{data.nom +' '+data.prenom}</h1>
                                 <h5 className="mb-4 text-left text-portfolio" style={{fontWeight:"lighter"}}>{data.job}</h5>
-                                  <p className="text-muted"  style={{textAlign:'left'}}>
+                                  <p className="text-white"  style={{textAlign:'left'}}>
                                    {data.about.description}
                                   </p>
                                   <div className="container-fluid p-0 d-flex justify-content-between align-items-center">
@@ -211,12 +211,12 @@ export default class Home extends Component {
                       </div>
                       <div id="experience" className="container-fluid my-4">
                             <div className="container my-5 d-flex flex-column justify-content-center align-items-center">
-                              <h2 className="p-0 m-0 border-bottom" style={{fontWeight:900}}>&#x27E8; <span className="" style={{fontSize:"small",color:'#576ee0'}}>03.</span> Expériences&#x27E9;</h2>
+                              <h2 className="p-0 m-0 border-bottom" style={{fontWeight:900}}>&#x27E8; <span className="" style={{fontSize:"small",color:'#576ee0'}}>03.</span>Expériences&#x27E9;</h2>
                               <p className="p-0 m-0">Qualifications</p>
                             </div>
                             <div className="d-flex mb-5 justify-content-center align-items-center">
-                              <Button className={this.state.experience?"mx-2 text-white btn-portfolio":"mx-2 text-on text-white"} onClick={this.handleExperienceOn}>&#x27E8; <CastForEducation style={{fontSize:'16px'}}/>Educations&#x27E9;</Button>
-                              <Button className={!this.state.experience?"mx-2 text-white btn-portfolio":"mx-2 text-on text-white"} onClick={this.handleExperienceOff}>&#x27E8; <WorkOutline style={{fontSize:'16px'}}/>xpériences Professionnels&#x27E9;</Button>
+                                <Button className={this.state.experience?"mx-2 text-white btn-portfolio":"mx-2 text-on text-white"} onClick={this.handleExperienceOn}>&#x27E8; <CastForEducation style={{fontSize:'16px'}}/>Educations&#x27E9;</Button>
+                                <Button className={!this.state.experience?"mx-2 text-white btn-portfolio":"mx-2 text-on text-white"} onClick={this.handleExperienceOff}>&#x27E8; <WorkOutline style={{fontSize:'16px'}}/>xpériences Professionnels&#x27E9;</Button>
                             </div>
                             <div className="row container-fluid">
                             {this.state.experience?<Timeline position="alternate">
@@ -235,7 +235,7 @@ export default class Home extends Component {
                                       </TimelineSeparator>
                                     <TimelineContent>
                                       <h5>{edu.diplome}</h5>
-                                      <h6 className="text-muted">{edu.school}</h6>
+                                      <h6 className="text-muted d-flex align-tems-center"> <Avatar src={edu.img} style={{height:25,width:'auto',marginRight:5}} variant="square"/> {edu.school}</h6>
                                     </TimelineContent>
                                 </TimelineItem>)}
                               </Timeline>:
@@ -255,7 +255,7 @@ export default class Home extends Component {
                                           </TimelineSeparator>
                                         <TimelineContent>
                                           <h5>{exp.job}</h5>
-                                          <h6 className="text-muted">{exp.company}</h6>
+                                          <h6 className="text-muted d-flex align-items-center"><Avatar src={exp.img} style={{height:25,width:'auto',marginRight:5}} variant="square"/> {exp.company}</h6>
                                           <p className="" style={{fontSize:12}}>{exp.target}</p>
                                         </TimelineContent>
                                       </TimelineItem>
@@ -267,7 +267,7 @@ export default class Home extends Component {
                       <div className="container-fluid rounded p-0" style={{height:400,overflow:'hidden',backgroundColor:"#14203f"}}>
                           <div className='row p-0'>
                               <div className="col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center">
-                                  <h2 className="text-portfolio mx-3 my-2 text-left container rounded">MON CONSEIL PERSONNEL</h2>
+                                  <h2 className="text-portfolio mx-3 my-2 text-left container rounded">My Personnal Advise</h2>
                                   <h6 className="mx-3 container my-2" style={{fontWeight:'lighter'}}> {data.conseil}
                                   </h6>
                                   <div className="container my-3">
@@ -348,7 +348,7 @@ export default class Home extends Component {
                                   </div>
                                   <div className="row container-fluid col-lg-8 col-md-8 col-sm-12">
                                       <div className="col-md-6 col-sm-12 my-3">
-                                          <div className="border-portfolio rounded  px-2 py-1" style={{backgroundColor:"#14203f"}}>
+                                          <div className="border-portfolio rounded  px-2 py-1 bg-portfolio-input">
                                             <div>
                                               <label htmlFor="nom" className="text-white"  style={{fontSize:15,fontWeight:'lighter'}}>Nom & Prenom <ArrowDownwardOutlined style={{fontSize:15}}/></label>
                                             </div>
@@ -356,7 +356,7 @@ export default class Home extends Component {
                                           </div>
                                       </div>
                                       <div className="col-md-6 col-sm-12 my-3">
-                                      <div className="border-portfolio rounded  px-2 py-1" style={{backgroundColor:"#14203f"}}>
+                                      <div className="border-portfolio rounded  px-2 py-1 bg-portfolio-input">
                                             <div>
                                               <label htmlFor="nom" className="text-white"  style={{fontSize:15,fontWeight:'lighter'}}>E-mail <ArrowDownwardOutlined style={{fontSize:15}}/></label>
                                             </div>
@@ -364,7 +364,7 @@ export default class Home extends Component {
                                           </div>
                                       </div>
                                       <div className="col-md-12 col-sm-12 my-3">
-                                      <div className="border-portfolio rounded  px-2 py-1" style={{backgroundColor:"#14203f"}}>
+                                      <div className="border-portfolio rounded  px-2 py-1  bg-portfolio-input">
                                             <div>
                                               <label htmlFor="nom" className="text-white"  style={{fontSize:15,fontWeight:'lighter'}}>Objet <ArrowDownwardOutlined style={{fontSize:15}}/></label>
                                             </div>
@@ -372,7 +372,7 @@ export default class Home extends Component {
                                           </div>
                                       </div>
                                       <div className="col-sm-12 my-3">
-                                      <div className="border-portfolio rounded px-2 py-1" style={{backgroundColor:"#14203f"}}>
+                                      <div className="border-portfolio rounded px-2 py-1 bg-portfolio-input">
                                             <div>
                                               <label htmlFor="nom" className="text-white"  style={{fontSize:15,fontWeight:'lighter'}}>Message <ArrowDownwardOutlined style={{fontSize:15}}/></label>
                                             </div>
@@ -380,7 +380,7 @@ export default class Home extends Component {
                                           </div>
                                       </div>
                                       <div className="container my-3">
-                                        <a size="large" href="#contact" className="btn btn-lg btn-portfolio"><BoltOutlined/>ENVOYER VOTRE MESSAGE</a>
+                                        <button size="large" className="btn btn-lg btn-portfolio"><BoltOutlined/>ENVOYER VOTRE MESSAGE</button>
                                       </div>
                                       </div>
                                 </div>

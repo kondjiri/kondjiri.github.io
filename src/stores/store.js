@@ -3,7 +3,7 @@ export const data = {
     nom:"FANE",
     prenom:"Kondjiri",
     messageAcceuil:"Hi, you can call me",
-    job:"Ingénieur Télécom | Informatiques | Réseaux",
+    job:"Telecom | Networking | Computer Science Engineer",
     tel:'+22379773329',
     porfile:"images/kfane02.jpeg",
     image:"images/Fane.png",
@@ -15,9 +15,9 @@ export const data = {
     facebook:'https://www.facebook.com/kondjiri.fane',
     instagram:'https://www.instagram.com/kfane___/',
     conseil:"Je suis passionné par la TechnologieMa plus grande motivation est de pouvoir mettre en place des solutions informatiquesqui contribuent au développement du Pays,en place des solutions informatiquesqui contribuent au développement du Pays",
-    description:'Je suis passionné par la TechnologieMa plus grande motivation est de pouvoir mettre en place des solutions informatiquesqui contribuent au développement du Pays',
+    description:'Freshly holder of a State Engineer diploma in Telecommunications, Computer & Networks option at the National Institute of Telecommunications and Information and Communication Technologies of Oran Algeria (INTTIC) since 2021. technology, my greatest motivation is to be able to set up IT solutions that contribute to the development of the country.',
     about:{
-        description:'Je suis passionné par la Technologie Ma plus grande motivation est de pouvoir mettre en place des solutions informatiquesqui contribuent au développement du Pays',
+        description:'Do what you love and Love what you do. ',
         projects:3,
         experiences:4,
         company:3
@@ -133,57 +133,79 @@ export const data = {
             {
                 id:1,
                 diplome:'Diplôme d’Ingénieur d’État en Télécommunications',
+                img:'images/algeria.png',
                 school:'Institut National des Télécommunications et des TICs (INTTIC) |Oran Algérie',
                 annee:'2015-2020'
             },
             {
                 id:2,
-                diplome:'Attestation Baccalauréat',
+                diplome:'Baccalaureat Diploma',
+                img:'images/malian.png',
                 school:'Lycée BAminata Coulibaly (LBAC) | Bamako Mali',
                 annee:'2012-2015'
+            },
+            {
+                id:3,
+                diplome:'English Certificate',
+                img:'images/algeria.png',
+                school:'International Summer School | Algeria',
+                annee:'2017-2018'
+            },
+            {
+                id:3,
+                diplome:'English Certificate',
+                img:'images/algeria.png',
+                school:'Metro Languages | Algeria',
+                annee:'2017-2019'
             }
         ],
         experiences:[
             {
                 id:1,
-                job:'DEVELOPPEUR FULLSTACK & DESIGNER',
+                job:'SOFTWARE DEVELOPPER & DESIGNER',
                 company:'NG System | Full Stack Developper & Designer',
                 period:'10/2021- 112/2021',
+                img:'images/ngsystem.png',
                 target:'Logiciels Informatiques, Angular, Reactjs, Java Spring Boot, Nodejs, PHP, JavaScript, Photoshop, Illustration, ionic, React Native, Java, Web Service &API'
             },
             {
                 id:2,
-                job:'STAGES',
+                job:'SOFTWARE DEVELOPPER & DESIGNER INTERNSHIP',
                 company:'NG System | Full Stack Developper & Designer',
                 period:'07/2021- 10/2021',
+                img:'images/ngsystem.png',
                 target:'Logiciels Informatiques, Angular, Reactjs, Java Spring Boot, Nodejs, PHP, JavaScript, Photoshop, Illustration, ionic, React Native, Java, Web Service &API'
             },
             {
                 id:3,
-                job:'FORMATIONS & STAGES',
+                job:'TELECOM INSTALLATION TRAINING & INTERNSHIP',
                 company:'AFRO Engineering & TC SARL – Installation Télécom & Drive Test & Rapport',
                 period:'03/2021- 07/2021',
+                img:'images/teliya.png',
                 target:'Faisceau Hertzien (FH), DCDU, BBU, ATN, RTN, Antenne GSM (Hexa bande, Tribande, Quatribande), Swap d’Antenne Huawei & Nokia, PHU, GNEX Assistant, 4G, 3G, 2G, FPFH, BTS, Baie d’Énergie, Câble d’Alimentation, Câble Jaune-Vert (TER ou Mise à la terre), Câble Jumper, Fibre Optique, Coupleur (1+0 & 1+1), Câble IF.'
             },
             {
                 id:4,
-                job:'STAGE : Initiation à la Télédétection',
+                job:'INTERNSHIP : Teledetection Initiation',
                 company:'ASA (Agence Spatiales d’Algérie) & CTS (Centre des Techniques Spatiales d’Algérie)',
                 period:'02/2020-04/2020',
+                img:'images/asa.jpeg',
                 target:'Machine Learning, Deep Learning, Images Satellitaires, Classification et Segmentation des Images, Python, Tensorflow (Keras API), Probabilités et Statistiques, Optimisation, Analyse des Données de la Télédétection, PCA, Notions de base sur la Télédétection.'
             },
             {
                 id:5,
-                job:'STAGE : Projet de Fin d’Étude',
+                job:'INTERNSHIP : Graduation Project',
                 company:'CDS (Centre de Dévéloppement Satellitaires) – Implémentation et Analyse des Images Satellitaires en utilisant Machine Learning & Deep Learning | Oran Algérie',
                 period:'02/2020-05/2020',
+                img:'images/asa.jpeg',
                 target:'Segmentation des Images Satellitaires avec les Deep Learning et CNN et proposé une technique d’amélioration des méthodes'
             },
             {
                 id:6,
-                job:'STAGES- Introduction Pratique en Réseaux & Informatiques',
+                job:'INTERNSHIP- Computer Science & Networking',
                 company:'HTA – HASNAOUI TELECOM ALGERIA',
                 period:'07/2019-08/2019',
+                img:'images/hasnaoui.png',
                 target:'Administration Réseaux, Sécurité des Réseaux, Automatisation Réseaux, Cloud Storage, Compression des Données, Traitement des Signaux et Images, Réseaux de Nouvelles Génération (2G,3G & 4G), MSAN (DSLAM), IPTV, Modem.'
             },
             
